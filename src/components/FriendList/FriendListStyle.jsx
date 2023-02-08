@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const List = styled.ul`
     display: flex;
@@ -12,7 +12,6 @@ export const ListItem = styled.li`
     align-items: center;
     justify-content: flex-start;
     padding-left: 40px;
-
     width: 240px;
     height: 120px;
     background-color: #ffffff;
