@@ -1,4 +1,4 @@
-import {ListItem, Status, Avatar, Name, List, Green } from './FriendListStyle';
+import {ListItem, Status, Avatar, Name, List } from './FriendListStyle';
 import PropTypes from "prop-types";
 
 function FriendList({ friend }) {

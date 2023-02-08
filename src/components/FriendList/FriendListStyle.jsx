@@ -36,11 +36,3 @@ export const Name = styled.p`
     font-size: 30px;
     font-weight: 200;
 `
-
-export const Green = styled.span`
-    color: green;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 15px;
-`
