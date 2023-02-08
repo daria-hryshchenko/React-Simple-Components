@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import {Card, Description, Avatar, Name, Tag, Location, Stats, List, Label, Quantity } from './ProfileStyle';
 
 
 function Profile({
@@ -8,7 +8,8 @@ function Profile({
         <Description>
     <Avatar
       src = {avatar}
-      alt="User avatar"
+          alt="User avatar"
+          width="150px"
     />
             <Name>{username}</Name>
             <Tag>@{tag}</Tag>
@@ -35,13 +36,3 @@ function Profile({
 export default Profile;
 
 
-const Card = styled.section``
-const Description = styled.ul``
-const Avatar = styled.img``
-const Name = styled.p``
-const Tag = styled.p``
-const Location = styled.p``
-const Stats = styled.p``
-const Label = styled.span``
-const Quantity = styled.span``
-const List = styled.li`` 

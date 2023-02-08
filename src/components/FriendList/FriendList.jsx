@@ -1,10 +1,10 @@
-// import {ListItem, Status, Avatar, Name, List } from './FriendStyledComponents';
-import styled from "styled-components";
+import {ListItem, Status, Avatar, Name, List, Green } from './FriendListStyle';
+import PropTypes from "prop-types";
 
 function FriendList({ friend }) {
       const friendsItems = friend.map((el) =>
-        <ListItem value={el.id}>
-              <Status>{el.isOnline}</Status>
+        <ListItem key={el.id} value={el.id}>
+              <Status statusType={el.isOnline}></Status>
               <Avatar src={el.avatar} alt="User avatar" width="48"/>
               <Name>{el.name}</Name>
     </ListItem>
@@ -19,11 +19,17 @@ function FriendList({ friend }) {
 
 export default FriendList;
 
-const List = styled.ul``
-const ListItem = styled.li``
-const Status = styled.span``
-const Avatar = styled.img``
-const Name = styled.p``
+FriendList.propTypes = {
+  friend: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.number.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    }),
+  ),
+};
+
 
 
 

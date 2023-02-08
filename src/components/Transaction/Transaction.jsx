@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import { Table, Head, Row, HeaderCell, Body, BodyCell, RowBody } from './TransactionStyle';
 
 
 function Transaction({items}) {
 
     const transitionItems = items.map((el) =>
-        <Row value={el.id}>
+        <RowBody key={el.id}>
             <BodyCell>{ el.type}</BodyCell>
             <BodyCell>{ el.amount}</BodyCell>
             <BodyCell>{ el.currency}</BodyCell>
-        </Row>
+        </RowBody>
     );
 
     return (
@@ -29,10 +29,3 @@ function Transaction({items}) {
 }
 
 export default Transaction;
-
-const Table = styled.table``
-const Head = styled.thead``
-const Row = styled.tr``
-const HeaderCell = styled.th``
-const Body = styled.tbody``
-const BodyCell = styled.td``
