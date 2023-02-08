@@ -15,7 +15,6 @@ export const ListItem = styled.li`
 
     width: 240px;
     height: 120px;
-
     background-color: #ffffff;
     color: #000000;
     border: none;
