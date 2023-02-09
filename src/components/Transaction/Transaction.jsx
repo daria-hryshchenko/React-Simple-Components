@@ -1,16 +1,7 @@
 import { Table, Head, Row, HeaderCell, Body, BodyCell, RowBody } from './TransactionStyle';
-
+import PropTypes from "prop-types";
 
 function Transaction({items}) {
-
-    const transitionItems = items.map((el) =>
-        <RowBody key={el.id}>
-            <BodyCell>{ el.type}</BodyCell>
-            <BodyCell>{ el.amount}</BodyCell>
-            <BodyCell>{ el.currency}</BodyCell>
-        </RowBody>
-    );
-
     return (
         <Table>
             <Head>
@@ -22,10 +13,28 @@ function Transaction({items}) {
             </Head>
 
             <Body>
-                {transitionItems}
+                {items.map((el) =>
+                <RowBody key={el.id}>
+                    <BodyCell>{ el.type}</BodyCell>
+                    <BodyCell>{ el.amount}</BodyCell>
+                    <BodyCell>{ el.currency}</BodyCell>
+                </RowBody>
+    )}
             </Body>
         </Table>
     );
 }
 
 export default Transaction;
+
+
+Transaction.propTypes = {
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+            amount: PropTypes.number.isRequired,
+            currency: PropTypes.string.isRequired,
+        }).isRequired,
+    )
+}
